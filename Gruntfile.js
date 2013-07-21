@@ -249,6 +249,7 @@ grunt.initConfig({
 				compress: false,
 				paths: ['styl/lib'],
 				import: [
+					'nib',
 					'variables',
 					'mixins'
 				]

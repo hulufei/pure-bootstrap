@@ -239,7 +239,11 @@ grunt.initConfig({
             options: {
                 interrupt: true
             }
-        }
+        },
+		styl: {
+			files: 'styl/**/*.styl',
+			tasks: ['stylus']
+		}
     },
 
 	// -- Stylus Config
@@ -258,7 +262,7 @@ grunt.initConfig({
 				expand: true,
 				cwd: 'styl/',
 				src: ['**/*.styl', '!lib/*'],
-				dest: 'dist/',
+				dest: 'css/',
 				ext: '.css'
 			}]
 		}

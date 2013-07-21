@@ -1,0 +1,49 @@
+@import 'core'
+
+.pure-button
+    font-size: 100%
+    *font-size: 90% /*IE 6/7 - To reduce IE's oversized button text*/
+    *overflow: visible /*IE 6/7 - Because of IE's overly large left/right padding on buttons */
+    padding: 0.5em 1.5em 0.5em
+    color: #444 /* rgba not supported (IE 8) */
+    color: rgba(0, 0, 0, 0.8)
+    border: 1px solid #999 /*IE 6/7/8*/
+    border: none rgba(0, 0, 0, 0)  /*IE9 + everything else*/
+    background-color: buttonDefaultBackground
+    text-decoration: none
+    border-radius: buttonRadius
+    -webkit-font-smoothing: antialiased
+    /* Transitions */
+    // transition(0.1s linear box-shadow)
+
+.pure-button-hover,
+.pure-button:hover,
+.pure-button:focus
+    filter: unquote("progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#1a000000',GradientType=0)")
+    background-image: linear-gradient(top, rgba(#000, 0.05) 40% , rgba(#000, 0.1))
+
+.pure-button:focus
+    outline: 0
+
+.pure-button-active,
+.pure-button:active
+    box-shadow: 0 0 0 1px rgba(0,0,0, 0.15) inset, 0 0 6px rgba(0,0,0, 0.20) inset
+
+.pure-button[disabled],
+.pure-button-disabled,
+.pure-button-disabled:hover,
+.pure-button-disabled:focus,
+.pure-button-disabled:active
+    border: none
+    background-image: none
+    filter: unquote("progid:DXImageTransform.Microsoft.gradient(enabled = false)")
+    opacity(0.4)
+    cursor: not-allowed
+    box-shadow: none
+
+.pure-button-primary,
+.pure-button-selected,
+a.pure-button-primary,
+a.pure-button-selected
+    background-color: buttonPrimaryBackground
+    color: buttonPrimaryTextColor

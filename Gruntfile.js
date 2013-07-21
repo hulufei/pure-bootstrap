@@ -240,11 +240,33 @@ grunt.initConfig({
                 interrupt: true
             }
         }
-    }
+    },
+
+	// -- Stylus Config
+	stylus: {
+		compile: {
+			options: {
+				compress: false,
+				paths: ['styl/lib'],
+				import: [
+					'variables',
+					'mixins'
+				]
+			},
+			files: [{
+				expand: true,
+				cwd: 'styl/',
+				src: ['**/*.styl', '!lib/*'],
+				dest: 'dist/',
+				ext: '.css'
+			}]
+		}
+	}
 });
 
 // -- Main Tasks ---------------------------------------------------------------
 
+grunt.loadNpmTasks('grunt-contrib-stylus');
 grunt.loadNpmTasks('grunt-contrib-clean');
 grunt.loadNpmTasks('grunt-contrib-copy');
 grunt.loadNpmTasks('grunt-contrib-concat');

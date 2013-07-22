@@ -2,3 +2,15 @@ inline-block()
     display: inline-block;
     *display: inline; /*IE 6/7*/
     zoom: 1;
+
+// The micro clearfix http://nicolasgallagher.com/micro-clearfix-hack/
+$clearfix
+	*zoom:1
+
+	&:before,
+	&:after
+		content:""
+		display:table
+
+	&:after
+		clear:both

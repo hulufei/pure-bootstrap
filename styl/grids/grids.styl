@@ -1,0 +1,21 @@
+// TODO: merge with grids-core
+$grid-common
+	inline-block()
+	letter-spacing: normal;
+	word-spacing: normal;
+	vertical-align: top;
+	text-rendering: auto;
+
+.{PREFIX}{UNIT}-1
+	@extends $grid-common
+	width: 100%
+
+for $col in (1..COLUMNS)
+	unless $col in (7 9 11)
+		for i in (1...$col)
+			if !(i == 1 && $col == 1) && \
+				!(i == 9 && $col == 12) && \
+				(i == 1 || $col % i != 0) && !($col % 2 == 0 && i % 2 == 0)
+				.{PREFIX}{UNIT}-{i}-{$col}
+					@extends $grid-common
+					width: (i / $col)%

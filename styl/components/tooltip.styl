@@ -1,0 +1,54 @@
+.tooltip {
+	position: absolute
+	width: 280px
+	padding: 1.5em
+	border: 1px solid tipBorderColor
+	background: tipBackground
+
+	&:before,
+	&:after {
+		content: ''
+		display: block
+		position: absolute
+		width: 0
+		height: 0
+		border-style: solid
+		border-width: tipBorderWidth
+	}
+
+	&.top {
+		$left = 50%
+		$top = - 2 * tipBorderWidth
+
+		&:before {
+			top: $top
+			left: $left
+			border-color: transparent transparent tipBorderColor
+			margin-left: - tipBorderWidth
+		}
+		&:after {
+			top: $top + 1
+			left: $left
+			border-color: transparent transparent tipBackground
+			margin-left: - tipBorderWidth
+		}
+	}
+
+	&.left {
+		$top = 50%
+		$left = - 2 * tipBorderWidth
+
+		&:before {
+			border-color: transparent tipBorderColor transparent transparent
+			top: $top
+			left: $left
+			margin-top: - tipBorderWidth
+		}
+		&:after {
+			border-color: transparent tipBackground transparent transparent
+			top: $top
+			left: $left + 1
+			margin-top: - tipBorderWidth
+		}
+	}
+}

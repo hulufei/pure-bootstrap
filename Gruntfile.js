@@ -252,6 +252,7 @@ grunt.initConfig({
 			options: {
 				compress: false,
 				paths: ['styl/lib'],
+				'include css': true,
 				import: [
 					'nib',
 					'variables',

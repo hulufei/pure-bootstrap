@@ -1,23 +1,34 @@
+/**
+ * Navs include:
+ *     tab
+ *     pills
+ */
 .pure-nav
 	margin-left: 0
 	padding-left: 0
 	margin-bottom: baseLineHeight
 	list-style: none
 
+.pure-nav-tabs,
+.pure-nav-pills
+	@extends $clearfix
+	> li
+		float: left
+		> a
+			display: block
+			padding: 0.8em 1em
+			text-decoration: none
+
 // style 1: All tab have border
 // style 2: Only active tab have border
 // default: style 1
 .pure-nav-tabs
-	clearfix()
 	border-bottom: 1px solid tabBorder
 	// style 1
 	border-left: @border-bottom
 	> li
-		float: left
 		margin-bottom: -1px
 		> a
-			display: block
-			padding: 0.8em 1em
 			// style 2
 			// align with active > a
 			// border: 1px solid transparent
@@ -25,7 +36,6 @@
 			// style 1
 			border-top: 1px solid tabBorder
 			border-right: @border-top
-			text-decoration: none
 	.active
 		> a
 			// Make border transparent work
@@ -33,3 +43,15 @@
 			// style 2
 			// border: 1px solid tabBorder
 			border-bottom-color: transparent
+
+.pure-nav-pills
+	border-left: 1px solid tabBorder
+	> li
+		> a
+			border: 1px solid tabBorder
+			border-left: none
+			&:hover
+				background: lighten(tabBorder, 50%)
+	.active
+		> a
+			background: lighten(tabBorder, 30%)

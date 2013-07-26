@@ -1,0 +1,19 @@
+.pure-paginator
+	// Instead of using clearfix to make text-align work
+	inline-block()
+	list-style: none
+	padding-left: 0
+	li
+		display: inline
+	a,
+	span
+		float: left
+		padding: 0.5em 
+		font-weight: bold
+		color: mainColor
+	.active
+		a,
+		span
+			color: #333
+			&:hover
+				text-decoration: none

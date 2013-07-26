@@ -1,0 +1,41 @@
+.pure-modal
+	position: fixed
+	top: 30%
+	// margin-left: -@width to align center
+	left: 50%
+	border: 1px solid grayColor
+	padding: 2em
+	background: #FFF
+	z-index: zindexModal
+	border-radius: baseBorderRadius
+
+	.close
+		position: absolute
+		right: 10px
+		top: 5px
+		color: mainColor
+		cursor: pointer
+		&:hover
+			color: darken(mainColor, 20%)
+
+.pure-modal-head
+	@extends $clearfix
+
+.pure-modal-head,
+.pure-modal-body
+	margin-bottom: 1.5em
+
+.modal-backdrop
+	position: fixed
+	left: 0
+	top: 0
+	bottom: 0
+	right: 0
+	background-color: #000
+	z-index: zindexModalBackdrop
+	opacity(0.5)
+
+// .lt-ie7
+	// .modal,
+	// .modal-backdrop
+		// position: absolute

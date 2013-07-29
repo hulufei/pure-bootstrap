@@ -1,0 +1,29 @@
+// dropdown
+.dropdown
+	position: relative
+
+.dropdown-hd
+	// If need override border
+	border: 1px solid transparent
+
+.dropdown-cnt
+	display: none
+	position: absolute
+	left: 0
+	// Ajust as demand
+	top: 1em
+	width: 280px
+	padding: 0.5em
+	background: dropdownBackground
+	border: 1px solid dropdownBorder
+	z-index: zindexDropdown
+
+.dropdown-active
+	.dropdown-hd
+		position: relative
+		border-color: dropdownBorder
+		border-bottom: none
+		background: dropdownBackground
+		z-index: zindexDropdown + 1
+	.dropdown-cnt
+		display: block

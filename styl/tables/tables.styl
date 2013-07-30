@@ -20,7 +20,7 @@
     overflow: visible; /*to make ths where the title is really long work*/
     padding: 6px 12px; /* cell padding */
 }
-// Seems non sense
+// TODO: Seems non sense
 /*
 .pure-table td:first-child,
 .pure-table th:first-child {
@@ -33,6 +33,9 @@
     color: #000;
     text-align: left;
     vertical-align: bottom;
+}
+.pure-table tfoot {
+	border-top: 1px solid tableBorder;
 }
 
 /*
@@ -53,9 +56,12 @@ striping:
 }
 
 /* BORDERED TABLES */
-.pure-table-bordered td {
-    border-bottom: 1px solid tableBorder;
+.pure-table-bordered td,
+.pure-table-bordered th {
+    border: 1px solid tableBorder;
 }
+// TODO: seems non sense
+/*
 .pure-table-bordered tbody > tr:last-child td,
 .pure-table-horizontal tbody > tr:last-child td {
     border-bottom-width: 0;
@@ -63,6 +69,7 @@ striping:
 .pure-table-bordered tfoot {
 	border-top: 1px solid tableBorder;
 }
+*/
 
 
 /* HORIZONTAL BORDERED TABLES */

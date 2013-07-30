@@ -15,17 +15,18 @@
 
 .pure-table td,
 .pure-table th {
-    border-left: 1px solid tableBorder;/*  inner column border */
-    border-width: 0 0 0 1px;
     font-size: inherit;
     margin: 0;
     overflow: visible; /*to make ths where the title is really long work*/
     padding: 6px 12px; /* cell padding */
 }
+// Seems non sense
+/*
 .pure-table td:first-child,
 .pure-table th:first-child {
     border-left-width: 0;
 }
+*/
 
 .pure-table thead {
     background: tableHeadBackground;
@@ -73,4 +74,11 @@ striping:
 }
 .pure-table-horizontal tbody > tr:last-child td {
     border-bottom-width: 0;
+}
+
+/* VERTICAL BORDERED TABLES */
+.pure-table-vertical td,
+.pure-table-vertical th {
+    border-width: 0 0 0 1px;
+    border-left: 1px solid tableBorder;
 }

@@ -13,12 +13,13 @@ function Modal(options) {
 	this.element = $(options.element);
 
 	if (options.mask) {
-		var $mask = $('body').children('.modal-backdrop');
-		this.mask = $mask.length > 0 ? $mask : $('<div class="modal-backdrop hide"/>').appendTo('body');
+		var $mask = $('body').children('.pure-modal-backdrop');
+		this.mask = $mask.length > 0 ? $mask : $('<div class="pure-modal-backdrop"/>').appendTo('body');
+		this.mask.hide();
 	}
 
 	this.trigger.click($.proxy(this.show, this));
-	this.element.on('click', '.close', $.proxy(this.hide, this));
+	this.element.on('click', '.J_close', $.proxy(this.hide, this));
 }
 /**
  * 显示

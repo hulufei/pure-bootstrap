@@ -1,0 +1,19 @@
+/**
+ * 三角形
+ * @param size: px, em
+ * @param pos: top, bottom, left, right
+ * @param bg: hex, rgb, hsl Background color
+ */
+triangle(size = 3px, pos = down, bg = #999) {
+	height: 0;
+	if pos is down {
+		border-color: bg transparent transparent;
+		border-style: solid dashed dashed;
+	}
+	border-width: size;
+	vertical-align: middle;
+	font-size: 0;
+	overflow: hidden;
+	zoom: 1;
+}
+

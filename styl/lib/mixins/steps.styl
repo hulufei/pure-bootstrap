@@ -1,0 +1,62 @@
+/**
+ * Steps: 带三角指示的步骤导航条
+ * 对应的HTML结构：
+ *     <ul class="steps">
+ *         <li class="current">1. step 1<em></em><i></i></li>
+ *         <li>2. step 1<em></em><i></i></li>
+ *         <li>3. step 1<em></em><i></i></li>
+ *     </ul>
+ * @param num: 步骤数量
+ * @param bg: hex, rgb, hsl Background color, 主背景色
+ * @param d-cl: hex, rgb Border color, divider color, 隔断的三角颜色
+ * @param c-bg: hex, rgb, hsl Background color, 当前选中步骤的背景色
+ * @param c-cl: hex, rgb, hsl Background color, 当前选中步骤的前景色
+ * @param w: width
+ * @param h: height
+ */
+steps(num = 3, bg = #ad6c8f, d-cl = #fff, c-bg = #d81c80, c-cl = #fff, w = 100%, h = 32px) {
+	position:relative;
+	width: w;
+	height:h;
+	background: bg;
+	line-height: @height;
+	overflow:hidden;
+	zindex = num;
+	li {
+		position:relative;
+		float:left;
+		width: (w / num);
+		text-align:center;
+		z-index: num;
+	}
+	li em {
+		position:absolute;
+		right:-24px;
+		top:-8px;
+		width:0;
+		height:0;
+		line-height:0;
+		border-width:24px 0 24px 24px;
+		border-color:transparent  transparent transparent d-cl;
+		border-style:dashed dashed dashed solid;
+	}
+	li i {
+	  position:absolute;
+	  right:-16px;
+	  top:0;
+	  width:0;
+	  height:0;
+	  line-height:0;
+	  border-width:16px 0 16px 16px;
+	  border-color:transparent  transparent transparent bg;
+	  border-style:dashed dashed dashed solid;
+	}
+	.current {
+	  background: c-bg;
+	  color: c-cl;
+	  z-index: num - 1;
+	}
+	.current i {
+	  border-color:transparent transparent transparent c-bg;
+	}
+}

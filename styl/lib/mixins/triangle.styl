@@ -10,6 +10,18 @@ triangle(size = 3px, pos = down, bg = #999) {
 		border-color: bg transparent transparent;
 		border-style: solid dashed dashed;
 	}
+	if pos is top {
+		border-color: transparent transparent bg;
+		border-style: dashed dashed solid;
+	}
+	if pos is right {
+		border-color: transparent transparent transparent bg;
+		border-style: dashed dashed dashed solid;
+	}
+	if pos is left {
+		border-color: transparent bg transparent transparent;
+		border-style: dashed solid dashed dashed;
+	}
 	border-width: size;
 	vertical-align: middle;
 	font-size: 0;
